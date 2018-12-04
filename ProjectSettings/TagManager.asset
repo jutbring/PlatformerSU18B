@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - invisibleWall
+  - weapon
+  - ammoWall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - EnemyTriggers
+  - Player
+  - Ground
+  - EditorHelpers
+  - objects
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: EnemyTriggers
+    uniqueID: 1334509841
+    locked: 0
+  - name: Ground
+    uniqueID: 1833009187
+    locked: 0
+  - name: Objects
+    uniqueID: 4111987027
+    locked: 0
+  - name: Player
+    uniqueID: 872741777
+    locked: 0
+  - name: EditorHelpers
+    uniqueID: 424797527
+    locked: 0
