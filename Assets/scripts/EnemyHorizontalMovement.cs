@@ -46,8 +46,10 @@ public class EnemyHorizontalMovement : MonoBehaviour
             // left-variablen blir det den inte blir innan
             left = !left;
         }
-        if (collision.tag == "weapon")
+        // om det som nuddar är en "GroundCheckBox" (om man hoppar på den)...
+        if (collision.tag == "groundCheckBox")
         {
+            // ...försvinner fienden
             Destroy(gameObject);
         }
     }

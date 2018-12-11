@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class loadLevel : MonoBehaviour
 {
+
+
     // variabel som säger vilken scen som ska laddas
     public string sceneToLoad = "PlatformerLevel1";
     // när någonting nuddar objektet
@@ -15,8 +17,12 @@ public class loadLevel : MonoBehaviour
         {
             // poängen sätts till 0
             coinPickup.score = 0;
+            // nycklarna sätts till 0
+            keyPickUp.keys = 0;
             // laddar scenen som ska laddas 
             SceneManager.LoadScene(sceneToLoad);
+          
+
         }
     }
 }

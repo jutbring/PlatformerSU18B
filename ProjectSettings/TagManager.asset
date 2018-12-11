@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - invisibleWall
   - weapon
-  - ammoWall
+  - groundCheckBox
   layers:
   - Default
   - TransparentFX

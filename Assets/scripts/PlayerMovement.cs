@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
-    public bool left;
+{  
+    
+    public static bool left;
     // sätter farten
     public float movementSpeed = 8f;
     // sätter hoppkraften
@@ -18,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // om bossTriggern har känt av spelaren...
+        if (bossTrigger.playerCheck == true)
+        {
+            // ...byts spawnpointen
+            transform.position = new Vector2(37, -19 );
+        }
         // sätter rigidbodyn till att referera till rigidbody-komponenten
         rbody = GetComponent<Rigidbody2D>();
     }
@@ -39,21 +46,40 @@ public class PlayerMovement : MonoBehaviour
                 rbody.velocity = new Vector2(rbody.velocity.x, jumpSpeed);
             }
         }
+        // om spelaren rör sig åt mindre än 0 åt x (vänster)...
         if (rbody.velocity.x < 0)
         {
+            // ...pekar spelaren åt vänster
             left = true;
         }
+        // om spelaren rör sig åt mer än 0 åt x (höger)...
         if (rbody.velocity.x > 0)
         {
+            // ...pekar spelaren åt höger
             left = false;
         }
+        // om spelaren pekar mot vänster...
         if (left == true)
         {
+            // ...inverteras spriten åt vänster
             transform.localScale = new Vector3(-.8f, .8f, .8f);
         } 
+        // annars...
         else
         {
+            // ...blir spriten normal
             transform.localScale = new Vector3(.8f, .8f, .8f);
+        }
+
+    }
+    // när något nuddar spelaren
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // om det som nuddar är spelaren...
+        if (collision.tag == "Enemy")
+        {
+            // ...hoppar spelaren
+            rbody.velocity = new Vector2(rbody.velocity.x, jumpSpeed);
         }
     }
 }
